@@ -65,7 +65,7 @@ class BibolamaziApplication(QApplication):
         super(BibolamaziApplication, self).__init__(sys.argv)
         
         self.setWindowIcon(QIcon(':/pic/bibolamazi_icon.png'))
-        self.setApplicationName('Bibolamazi')
+        self.setApplicationName('Bibolamazi %s'%(bibolamaziversion.version_str))
         self.setApplicationVersion(bibolamaziversion.version_str)
         self.setOrganizationDomain('org.bibolamazi')
         self.setOrganizationName('Bibolamazi Project')
@@ -116,7 +116,8 @@ class MainWidget(QWidget):
 
         self.ui = Ui_MainWidget()
         self.ui.setupUi(self)
-
+        self.doCheckForUpdates()
+        
         # set up nice vector graphics on retina displays
         if sys.platform.startswith("darwin") and QT_VERSION_STR.startswith("4.8."):
             # use high-res SVG for retina displays
@@ -226,7 +227,7 @@ class MainWidget(QWidget):
                 pass # no checking for updates
             elif ret is False:
                 # no new updates
-                QMessageBox.information(self, "Software Update Check",
+                QMessageBox.information(self, "Software Update Check (current ver:%s)"%(bibolamaziversion.version_str),
                                         "There are no new updates.")
             elif isinstance(ret, tuple):
                 if len(ret) == 3:

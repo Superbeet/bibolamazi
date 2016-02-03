@@ -1,7 +1,7 @@
 ################################################################################
 #                                                                              #
 #   This file is part of the Bibolamazi Project.                               #
-#   Copyright (C) 2014 by Philippe Faist                                       #
+#   Copyright (C) 2013 by Philippe Faist                                       #
 #   philippe.faist@bluewin.ch                                                  #
 #                                                                              #
 #   Bibolamazi is free software: you can redistribute it and/or modify         #
@@ -20,16 +20,9 @@
 ################################################################################
 
 
-# This is the current BIBOLAMAZI version.
-# Bump the number here for different version numbers.
 
-version_str = "2.0"
-"""
-The version string. This is increased upon each release.
-"""
+# don't allow the use of "from filters import *" -- it's time consuming to detect all filters; so
+# detect the filters only when needed, when calling `detect_filters()`
+__all__ = []
 
 
-copyright_year = "2015"
-"""
-Year of copyright.
-"""

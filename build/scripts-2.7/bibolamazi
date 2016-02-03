@@ -1,7 +1,9 @@
+#!C:\Python27\python.exe
+
 ################################################################################
 #                                                                              #
 #   This file is part of the Bibolamazi Project.                               #
-#   Copyright (C) 2014 by Philippe Faist                                       #
+#   Copyright (C) 2013 by Philippe Faist                                       #
 #   philippe.faist@bluewin.ch                                                  #
 #                                                                              #
 #   Bibolamazi is free software: you can redistribute it and/or modify         #
@@ -20,16 +22,28 @@
 ################################################################################
 
 
-# This is the current BIBOLAMAZI version.
-# Bump the number here for different version numbers.
+import os
+import os.path
+import sys
+import logging
 
-version_str = "2.0"
-"""
-The version string. This is increased upon each release.
-"""
+try:
+    import bibolamazi.init
+except ImportError:
+    # realpath() needed for resolving executable symlink
+    ourrootpath = os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__)), '..'))
+    sys.path.append(ourrootpath)
+    sys.path.append(os.path.join(ourrootpath, '3rdparty', 'pybtex'))
+    sys.path.append(os.path.join(ourrootpath, '3rdparty', 'arxiv2bib'))
+    sys.path.append(os.path.join(ourrootpath, '3rdparty', 'pylatexenc'))
+    import bibolamazi.init
 
 
-copyright_year = "2015"
-"""
-Year of copyright.
-"""
+from bibolamazi.core.butils import BibolamaziError
+
+
+if __name__ == "__main__":
+    
+    # run main program
+    from bibolamazi.core import main
+    main.main()

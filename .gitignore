@@ -6,3 +6,16 @@ gui/_precompiled_filters_build
 gui/build
 gui/dist
 *.bibolamazicache
+gui/bibolamazigui.egg-info/PKG-INFO
+gui/bibolamazigui.egg-info/SOURCES.txt
+gui/bibolamazigui.egg-info/dependency_links.txt
+gui/bibolamazigui.egg-info/requires.txt
+gui/bibolamazigui.egg-info/top_level.txt
+gui/bibolamazigui.egg-info/zip-safe
+bibolamazi.egg-info/PKG-INFO
+bibolamazi.egg-info/SOURCES.txt
+bibolamazi.egg-info/dependency_links.txt
+bibolamazi.egg-info/requires.txt
+bibolamazi.egg-info/top_level.txt
+bibolamazi.egg-info/zip-safe
+dist/bibolamazi-3.2.post1-py2.7.egg

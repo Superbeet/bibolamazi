@@ -1,7 +1,7 @@
 ################################################################################
 #                                                                              #
 #   This file is part of the Bibolamazi Project.                               #
-#   Copyright (C) 2014 by Philippe Faist                                       #
+#   Copyright (C) 2013 by Philippe Faist                                       #
 #   philippe.faist@bluewin.ch                                                  #
 #                                                                              #
 #   Bibolamazi is free software: you can redistribute it and/or modify         #
@@ -19,17 +19,13 @@
 #                                                                              #
 ################################################################################
 
-
-# This is the current BIBOLAMAZI version.
-# Bump the number here for different version numbers.
-
-version_str = "2.0"
 """
-The version string. This is increased upon each release.
+Core bibolamazi module.
+
+See :py:mod:`bibolamazi.core.bibfilter`, :py:mod:`bibolamazi.core.bibolamazifile`,
+:py:mod:`bibolamazi.core.bibusercache` for the main core modules.
 """
 
-
-copyright_year = "2015"
-"""
-Year of copyright.
-"""
+# so that we can import bibolamazi.core.version from setup.py without e.g. crashing
+# because pybtex isn't available...
+#import bibolamazi.init
